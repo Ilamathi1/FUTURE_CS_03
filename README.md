@@ -15,6 +15,6 @@ Password Analyzer is a tool designed to help users assess the strength of their 
 
 1. **Clone the repository**:
    ```sh
-   git clone https://github.com/yourusername/password-analyzer.git
+   git clone https://github.com/Ilamathi1/FUTURE_CS_03.git
    cd password-analyzer
    ```

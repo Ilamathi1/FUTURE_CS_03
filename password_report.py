@@ -13,20 +13,20 @@ def generate_recommendations(issues, is_common, personal_info_issue):
     recommendations = []
 
 
-    if issues:
-        if "Password should be at least 8 characters long." in issues:
-            recommendations.append(f"{Fore.YELLOW}Use a password that is at least 8 characters long.{Style.RESET_ALL}")
-        if "Password should contain at least one lowercase letter." in issues:
-            recommendations.append(f"{Fore.YELLOW}Include at least one lowercase letter in your password.{Style.RESET_ALL}")
-        if "Password should contain at least one uppercase letter." in issues:
-            recommendations.append(f"{Fore.YELLOW}Include at least one uppercase letter in your password.{Style.RESET_ALL}")
-        if "Password should contain at least one digit." in issues:
-            recommendations.append(f"{Fore.YELLOW}Include at least one digit in your password.{Style.RESET_ALL}")
-        if "Password should contain at least one special character." in issues:
-            recommendations.append(f"{Fore.YELLOW}Include at least one special character in your password.{Style.RESET_ALL}")
+    for issue in issues:
+        match issue:
+            case "Password should be at least 8 characters long.":
+                recommendations.append(f"{Fore.YELLOW}Use a password that is at least 8 characters long.{Style.RESET_ALL}")
+            case "Password should contain at least one lowercase letter.":
+                recommendations.append(f"{Fore.YELLOW}Include at least one lowercase letter in your password.{Style.RESET_ALL}")
+            case "Password should contain at least one uppercase letter.":
+                recommendations.append(f"{Fore.YELLOW}Include at least one uppercase letter in your password.{Style.RESET_ALL}")
+            case "Password should contain at least one digit.":
+                recommendations.append(f"{Fore.YELLOW}Include at least one digit in your password.{Style.RESET_ALL}")
+            case "Password should contain at least one special character.":
+                recommendations.append(f"{Fore.YELLOW}Include at least one special character in your password.{Style.RESET_ALL}")
 
-
-    else:
+    if not issues:
         recommendations.append(f"{Fore.GREEN}Your password is strong. Here are some general tips for maintaining password security:{Style.RESET_ALL}")
         recommendations.append(f"{Fore.YELLOW} - Avoid using the same password for multiple accounts.{Style.RESET_ALL}")
         recommendations.append(f"{Fore.YELLOW} - Change your passwords regularly.{Style.RESET_ALL}")
